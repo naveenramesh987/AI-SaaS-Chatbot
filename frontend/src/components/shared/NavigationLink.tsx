@@ -7,7 +7,6 @@ type Props = {
   textColor: string;
   onClick?: () => Promise<void>;
 };
-
 const NavigationLink = (props: Props) => {
   return (
     <Link
