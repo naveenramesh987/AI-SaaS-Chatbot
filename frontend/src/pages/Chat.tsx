@@ -39,7 +39,7 @@ const Chat = () => {
       toast.success("Deleted Chats Successfully", { id: "deletechats" });
     } catch (error) {
       console.log(error);
-      toast.error("Deleted Chats Successfully", { id: "deletechats" });
+      toast.error("Deleting chats failed", { id: "deletechats" });
     }
   };
 
