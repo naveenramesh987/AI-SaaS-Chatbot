@@ -1,6 +1,6 @@
 import {
-  ReactNode,
   createContext,
+  ReactNode,
   useContext,
   useEffect,
   useState,
@@ -17,10 +17,7 @@ type User = {
   email: string;
 };
 type UserAuth = {
-  isLoggedIn: boolean;
-  user: User | null;
   login: (email: string, password: string) => Promise<void>;
-  signup: (name: string, email: string, password: string) => Promise<void>;
   logout: () => Promise<void>;
 };
 const AuthContext = createContext<UserAuth | null>(null);
@@ -30,7 +27,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    // fetch if the user's cookies are valid then skip login
     async function checkStatus() {
       const data = await checkAuthStatus();
       if (data) {

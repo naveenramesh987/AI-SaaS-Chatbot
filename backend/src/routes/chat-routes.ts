@@ -7,7 +7,6 @@ import {
   sendChatsToUser,
 } from "../controllers/chat-controllers.js";
 
-//Protected API
 const chatRoutes = Router();
 chatRoutes.post(
   "/new",
